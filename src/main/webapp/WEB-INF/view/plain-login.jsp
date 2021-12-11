@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +7,20 @@
 <title>Home Sweet Home</title>
 <style>
 	.failed {
-		color: red;
+		color: pink;
+	}
+	
+	function reportError()	{
+		var user = document.getElementsByName("username")[0].tagName;
+		console.log("user: "+user);
+		alert("The form was submitted");
 	}
 </style>
 </head>
 <body>
 	<h3>My Custom Login Page</h3>
 	<form:form action="${pageContext.request.contextPath}/authenticateTheUser"
-			   method="POST">
+			   method="POST" onsubmit="reportError();">
 	
 		<!-- Check for login error -->
 		<c:if test="${param.error != null}">
@@ -28,7 +35,7 @@
 			Password: <input type="password" name="password" />
 		</p>
 		
-		<input type="submit" value="Login" />
+		<input type="submit" value="Login"/>
 		
 	</form:form>
 </body>

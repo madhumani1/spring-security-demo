@@ -40,6 +40,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		 * .loginProcessingUrl("/authenticateTheUser") - post the data for processing (check user id and password). 
 		 * 												 No controller required, thanks to Spring.
 		 * .permitAll -allow everyone to see login page.   
+		 * 
+		 * .logout().permitAll();
 		 */
 		http.authorizeRequests()
 			.anyRequest().authenticated()
@@ -49,7 +51,11 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			.formLogin()
 				.loginPage("/showMyLoginPage")
 				.loginProcessingUrl("/authenticateTheUser")
-				.permitAll();
+				.permitAll()
+			
+			.and()
+			
+				.logout().permitAll();
 	}
 	
 	

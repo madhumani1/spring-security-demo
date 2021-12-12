@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home Sweet Home</title>
+<title>Custom Login Form</title>
 <style>
 	.failed {
-		color: pink;
+		color: red;
 	}
 	
 	function reportError()	{

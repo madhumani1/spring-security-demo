@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class LoginController {
 	@GetMapping("/showMyLoginPage")
 	public String showMyLoginPage()	{
-		return "plain-login";	// goes to /web-inf/view/plain-login.jsp
+		//return "plain-login";	// goes to /web-inf/view/plain-login.jsp
+		return "fancy-login";	// goes to /web-inf/view/fancy-login.jsp
 	}
 }

@@ -20,5 +20,12 @@
 		<br />
 		<p>Hola! I'm Dora, and this is my best friend boots.</p>
 	</div>
+	<!-- Add a logout button -->
+	<form:form action="${pageContext.request.contextPath}/logout" 
+			   method="POST">
+	
+		<input type="submit" value="Logout" />
+	
+	</form:form>
 </body>
 </html>

@@ -26,7 +26,7 @@
 				
 				<div style="padding-top: 30px" class="panel-body">
 					<!-- Login Form -->
-					<form:form action="${pageContext.request.contextPath}/authenticateTheUser" 
+					<form action="${pageContext.request.contextPath}/authenticateTheUser" 
 							   method="POST" class="form-horizontal">
 						<!-- Place for messages: error, alert etc ... -->
 						<div class="form-group">
@@ -70,7 +70,14 @@
 							</div>
 						</div>
 						<!-- <input type="submit" value="Login"/> -->
-					</form:form>
+						
+						<!-- Manually adding tokens -->
+						<!-- 
+							Comment the below line and you will get HTTP status 403 error.
+							Because CSRF token was not found.
+						 -->
+						<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					</form>
 				</div>
 			</div>
 		</div>		

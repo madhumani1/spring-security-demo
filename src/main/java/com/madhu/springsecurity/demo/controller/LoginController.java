@@ -17,4 +17,10 @@ public class LoginController {
 		//return "plain-login";	// goes to /web-inf/view/plain-login.jsp
 		return "fancy-login";	// goes to /web-inf/view/fancy-login.jsp
 	}
+	
+	// add request mapping for /access-denied
+	@GetMapping("/access-denied")
+	public String showAccessDenied() {
+		return "access-denied";	// goes to /web-inf/view/access-denied.jsp
+	}
 }

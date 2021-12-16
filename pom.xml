@@ -7,17 +7,19 @@
   <name>web-customer-tracker</name>
   <description>web-customer-tracker</description>
   <properties>
-  	<springframework.version>5.0.2.RELEASE</springframework.version>
-  	<springsecurity.version>5.3.12.RELEASE</springsecurity.version>
+  	<springframework.version>5.2.6.RELEASE</springframework.version>
+  	<springsecurity.version>5.2.6.RELEASE</springsecurity.version>
+  	<hibernate.version>5.3.7.Final</hibernate.version>
   	<maven.compiler.source>1.8</maven.compiler.source>
 	<maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <dependencies>
   	<!-- Spring MVC support -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-webmvc</artifactId>
-		<version>5.3.13</version>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${springframework.version}</version>
 	</dependency>
   	<!-- Servlet, JSP and JSTL support -->
 	<dependency>
@@ -63,12 +65,40 @@
 	    <artifactId>spring-security-taglibs</artifactId>
 	    <version>${springsecurity.version}</version>
 	</dependency>
+	<!-- Spring Transactions -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-tx</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Spring ORM -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${springframework.version}</version>
+	</dependency>
+	<!-- Hibernate Core -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	<!-- Hibernate Validator -->
+	<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+	<dependency>
+	    <groupId>org.hibernate.validator</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>6.0.7.Final</version>
+	</dependency>
 	<!-- JDBC Driver -->
 	<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
-	    <version>8.0.27</version>
+	    <version>8.0.13</version>
 	</dependency>
 	<!-- DB connection Pool -->
 	<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
@@ -76,6 +106,18 @@
 	    <groupId>com.mchange</groupId>
 	    <artifactId>c3p0</artifactId>
 	    <version>0.9.5.5</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+	<dependency>
+	    <groupId>org.javassist</groupId>
+	    <artifactId>javassist</artifactId>
+	    <version>3.23.1-GA</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+	<dependency>
+	    <groupId>javax.xml.bind</groupId>
+	    <artifactId>jaxb-api</artifactId>
+	    <version>2.3.1</version>
 	</dependency>
   </dependencies>
   <!-- Need to customer Maven build since we aren't using web.xml -->
